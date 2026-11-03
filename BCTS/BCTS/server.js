@@ -6,6 +6,7 @@ const PORT = process.env.PORT || 3000;
 
 // ---------- Database ----------
 const sql = new DatabaseSync(path.join(__dirname, process.env.DB_FILE || "bcts.db"));
+globalThis.__bctsDb = sql;
 sql.exec(`
   PRAGMA journal_mode = WAL;
   PRAGMA foreign_keys = ON;
