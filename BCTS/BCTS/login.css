@@ -1,0 +1,44 @@
+:root{--bg:#fbf4e4;--card:#161616;--field:#2a2926;--text:#fbf4e4;--muted:#a8a293;--line:#43413b}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;display:grid;place-items:center;padding:70px 20px 30px;background:var(--bg);color:var(--text);font:15px/1.5 "Avenir Next","Segoe UI",Helvetica,Arial,sans-serif}
+
+.card{position:relative;width:100%;max-width:322px;background:var(--card);border-radius:34px;padding:78px 30px 30px;box-shadow:0 30px 50px -20px #16161666}
+.avatar{position:absolute;top:-46px;left:50%;transform:translateX(-50%);width:94px;height:94px;border-radius:50%;background:var(--card);border:5px solid var(--bg);display:grid;place-items:center}
+.avatar img{width:44px;height:44px;object-fit:contain;display:block}
+
+.tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:2px solid var(--line);margin-bottom:22px}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:0 0 10px;font:inherit;font-size:18px;font-weight:700;color:#78736a;cursor:pointer}
+.tabs button.active{color:var(--text);border-color:var(--text)}
+.tabs button:focus-visible,.link:focus-visible,.social button:focus-visible,.submit:focus-visible,.switch button:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+
+label{display:block;font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--muted);margin:0 0 6px 4px}
+input{width:100%;border:2px solid transparent;border-radius:9px;background:var(--field);color:var(--text);font:inherit;padding:11px 13px;margin-bottom:16px}
+input:focus{outline:0;border-color:var(--text)}
+.hidden{display:none}
+
+.error{display:none;background:#201f1c;border-left:3px solid var(--text);border-radius:6px;padding:9px 12px;font-size:13px;margin-bottom:16px}
+.error.show{display:block}
+
+.submit{display:block;margin:6px auto 0;min-width:138px;border:2px solid var(--text);border-radius:8px;background:var(--text);color:var(--card);font:inherit;font-weight:700;padding:9px 20px;cursor:pointer}
+.submit:hover{background:var(--card);color:var(--text)}
+
+.center{text-align:center}
+.link{background:none;border:0;color:var(--muted);font:inherit;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;border-bottom:1px solid var(--line);padding:2px 4px;cursor:pointer;margin-top:16px}
+.link:hover{color:var(--text)}
+
+.divider{display:flex;align-items:center;gap:12px;color:var(--muted);font-size:12px;margin:22px 0 16px}
+.divider:before,.divider:after{content:"";flex:1;height:1px;background:var(--line)}
+
+.social{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.social button{display:flex;align-items:center;justify-content:center;gap:8px;background:transparent;border:2px solid var(--line);border-radius:9px;color:var(--text);font:inherit;font-size:13px;font-weight:700;padding:9px 6px;cursor:pointer}
+.social button:hover{border-color:var(--text);background:var(--text);color:var(--card)}
+.social svg{width:18px;height:18px}
+
+.switch{margin:20px 0 0;font-size:13px;color:var(--muted);text-align:center}
+.switch button{background:none;border:0;color:var(--text);font:inherit;font-weight:700;text-decoration:underline;cursor:pointer;padding:0}
+.note{margin:16px 0 0;font-size:10px;color:#78736a;text-align:center}
+
+dialog{background:var(--card);color:var(--text);border:0;border-radius:24px;padding:28px 26px;width:90%;max-width:322px}
+dialog::backdrop{background:#000a}
+dialog h2{margin:0 0 6px;font-size:20px}
+dialog p{margin:0 0 16px;color:var(--muted);font-size:13px}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BCTS | Basic Computer Troubleshooting System</title>
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="index.html"><span class="brand-icon"><img src="logo.png" alt=""></span><span>BCTS<small>Basic Computer Troubleshooting System</small></span></a>
+    <p class="menu-label">WORKSPACE</p>
+    <a class="nav-link active" href="#dashboard" data-page="dashboard"><span>▦</span> Dashboard</a>
+    <a class="nav-link" href="#guides" data-page="guides"><span>⌕</span> Troubleshooting Guides</a>
+    <a class="nav-link" href="#history" data-page="history"><span>◷</span> My History</a>
+    <a class="nav-link" href="#profile" data-page="profile"><span>♙</span> My Profile</a>
+    <div class="sidebar-bottom"><div class="avatar" id="sidebarAvatar">JD</div><div><strong id="sidebarName">Jamie Doe</strong><small>Registered User</small></div><button id="logoutBtn" class="icon-button" aria-label="Log out">↪</button></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button id="menuToggle" class="icon-button mobile-menu" aria-label="Toggle menu">☰</button>
+      <div><p class="eyebrow">COMPUTER SUPPORT WORKSPACE</p><h1 id="pageTitle">Dashboard</h1></div>
+      <div class="top-actions"><span class="status-dot"></span><span class="online-label">System Online</span><button class="help-button" id="helpBtn">? <span>Help</span></button></div>
+    </header>
+    <section class="page active-page" id="dashboard">
+      <div class="welcome-card"><div><span class="welcome-tag">YOUR COMPUTER CARE CENTER</span><h2>Hi, <span id="welcomeName">Jamie</span>! 👋</h2><p>Having a computer problem? Let's work through it together.</p><button class="button button-light" data-go="guides">Find a Solution <span>→</span></button></div><div class="welcome-art" aria-hidden="true"><div class="monitor"><div class="screen"><span>✓</span><i></i><i></i><i></i></div><div class="monitor-stand"></div></div><div class="spark spark-one">✦</div><div class="spark spark-two">✧</div></div></div>
+      <div class="section-heading"><h2>Your Overview</h2><p>A quick look at your troubleshooting activity</p></div>
+      <div class="stat-grid">
+        <article class="stat-card"><div class="stat-icon blue">⌕</div><div><p>Guides Available</p><strong>14</strong><small>Across 3 categories</small></div></article>
+        <article class="stat-card"><div class="stat-icon blue">✓</div><div><p>Problems Resolved</p><strong id="resolvedCount">0</strong><small>Keep it up!</small></div></article>
+        <article class="stat-card"><div class="stat-icon blue">◷</div><div><p>Attempts Logged</p><strong id="attemptCount">0</strong><small>Since you joined</small></div></article>
+      </div>
+      <div class="content-grid">
+        <section class="surface"><div class="surface-heading"><div><h2>Browse Categories</h2><p>Choose the type of issue you're experiencing.</p></div><button class="text-button" data-go="guides">View all →</button></div>
+          <div class="category-grid">
+            <button class="category-card" data-category="Hardware"><span class="category-icon">▣</span><strong>Hardware</strong><small>4 guides</small></button>
+            <button class="category-card" data-category="Software"><span class="category-icon">▤</span><strong>Software</strong><small>6 guides</small></button>
+            <button class="category-card" data-category="Network"><span class="category-icon">⌁</span><strong>Network</strong><small>4 guides</small></button>
+          </div>
+        </section>
+        <section class="surface"><div class="surface-heading"><div><h2>Recent Activity</h2><p>Your latest troubleshooting attempts</p></div><button class="text-button" data-go="history">See history →</button></div><div id="recentActivity" class="activity-list"></div></section>
+      </div>
+    </section>
+    <section class="page" id="guides">
+      <div class="page-intro"><div><h2>Troubleshooting Guides</h2><p>Simple, step-by-step help for common computer problems.</p></div></div>
+      <div class="filter-row"><label class="search-box"><span>⌕</span><input id="guideSearch" type="search" placeholder="Search computer problems..."></label><select id="categoryFilter" aria-label="Filter category"><option value="All">All categories</option><option>Hardware</option><option>Software</option><option>Network</option></select></div>
+      <div id="guideGrid" class="guide-grid"></div>
+    </section>
+    <section class="page" id="history">
+      <div class="page-intro"><div><h2>My History</h2><p>Review the troubleshooting attempts you've recorded.</p></div><button class="button button-primary" id="clearHistory">Clear all history</button></div>
+      <section class="surface table-surface"><div class="table-wrap"><table><thead><tr><th>Computer Problem</th><th>Category</th><th>Result</th><th>Date</th><th>Actions</th></tr></thead><tbody id="historyTable"></tbody></table></div><p class="table-note">Your history is saved in your BCTS account. You can change a result or delete an entry.</p></section>
+    </section>
+    <section class="page" id="profile">
+      <div class="page-intro"><div><h2>My Profile</h2><p>Your account overview.</p></div></div>
+      <section class="surface profile-card"><div class="profile-avatar" id="profileAvatar">JD</div><h2 id="profileName">Jamie Doe</h2><p class="muted" id="profileEmail">jamie.doe@example.com</p><span class="role-pill">Registered User</span><div class="profile-details"><div><small>Account status</small><strong><span class="status-dot"></span> Active</strong></div><div><small>Member since</small><strong id="memberSince">October 2026</strong></div><div><small>Account type</small><strong>Registered User</strong></div></div><div class="profile-actions"><button class="button button-primary" id="editProfileBtn">Edit profile</button><button class="button" id="changePwBtn">Change password</button><button class="button button-danger" id="deleteAccountBtn">Delete account</button></div><p class="demo-warning">Your account is saved in the BCTS database.</p></section>
+    </section>
+    <footer>BCTS | Basic Computer Troubleshooting System <span>Student Project</span></footer>
+  </main>
+  <dialog id="guideDialog" class="guide-dialog"><button class="dialog-close" id="closeDialog" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "bcts",
+  "version": "1.0.0",
+  "description": "BCTS - Basic Computer Troubleshooting System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}
